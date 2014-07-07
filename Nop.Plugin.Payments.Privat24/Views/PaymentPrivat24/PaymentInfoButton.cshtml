@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "";
+}
+
+@using System.Web.Mvc.Html
+@using (Html.BeginRouteForm("Nop.Plugin.Payments.Privat24.SubmitButton", FormMethod.Post, new { id = "form-privat24checkout" }))
+{
+    <img id="privat24Image" alt="" src="@Url.Content("~/Plugins/Nop.Payments.Privat24/Styles/Images/api_logo_2.jpg")" style="cursor:pointer;" />
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#privat24Image').click(function () {
+            $("#form-privat24checkout").submit();
+        });
+    });
+</script>

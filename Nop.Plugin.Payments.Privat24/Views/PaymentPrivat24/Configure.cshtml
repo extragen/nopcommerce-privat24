@@ -1,0 +1,84 @@
+﻿@{
+    Layout = "";
+}
+@model ConfigurationModel
+@using Nop.Plugin.Payments.Privat24.Models;
+@using Nop.Web.Framework;
+@using (Html.BeginForm())
+{
+    <table class="adminContent">
+        @if (Model.IsBadCurrency)
+        {
+        <tr>
+            <td colspan="2">
+                <b>Your main currency is not supported by Privat24 payment system. Only USD, EUR, UAH!!!</b>
+                <br />
+                <br />
+                Russian
+                <br />
+                <b>Ваша валюта по умолчанию не потдерживается Privat24. 
+                Можно принимать платежи только в USD, EUR, UAH!!!</b>
+            </td>
+        </tr>
+        }
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.MerchantId):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.MerchantId)
+                @Html.ValidationMessageFor(model => model.MerchantId)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.MerchantSignature):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.MerchantSignature)
+                @Html.ValidationMessageFor(model => model.MerchantSignature)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.Currencies):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.Currencies)
+                @Html.ValidationMessageFor(model => model.Currencies)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.AdditionalFee):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.AdditionalFee)
+                @Html.ValidationMessageFor(model => model.AdditionalFee)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.ShowDebugInfo):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.ShowDebugInfo)
+                @Html.ValidationMessageFor(model => model.ShowDebugInfo)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.IsTestMode):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.IsTestMode)
+                @Html.ValidationMessageFor(model => model.IsTestMode)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit" name="save" value="save" class="t-button">@T("Admin.Common.Save")</button>
+            </td>
+        </tr>
+    </table>
+}

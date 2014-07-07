@@ -1,0 +1,8 @@
+﻿Group: Payment methods
+FriendlyName: Privat24
+SystemName: Payments.Privat24
+Version: 1.00
+SupportedVersions: 3.30
+Author: Viacheslav Boretskyi
+DisplayOrder: 1
+FileName: Nop.Plugin.Payments.Privat24.dll
